@@ -28,6 +28,11 @@ class App extends Component {
     this.getVideos = this.getVideos.bind(this);
   }
   
+  componentWillMount() {
+    // load random youtube content like 'cats' without user interaction
+    this.getVideos('cats');
+  }
+  
   getVideos(searchTerm) {
     // search videos using Youtube Search API
     YoutubeSearch({
