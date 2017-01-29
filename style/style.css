@@ -1,0 +1,9 @@
+.video-list .list-group-item {
+  cursor: pointer;
+  margin-bottom: 0.5em;
+}
+
+.video-list .list-group-item:hover,
+.video-list .list-group-item.selected {
+  border-color: #10aded;
+}

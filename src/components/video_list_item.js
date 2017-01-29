@@ -1,10 +1,14 @@
 import React, { Component } from 'react';
 
-const VideoListItem = ({video, onVideoSelect}) => {
+const VideoListItem = ({video, onVideoSelect, selectedVideo}) => {
   const imageUrl = video.snippet.thumbnails.default.url;
   
+  const setClassName = () => {
+    return (video === selectedVideo) ? "list-group-item selected" : "list-group-item";
+  };
+  
   return (
-    <li className="list-group-item" onClick={() => onVideoSelect(video)}>
+    <li className={setClassName()} onClick={() => onVideoSelect(video)}>
       <div className="media">
         <img className="d-flex mr-3" src={imageUrl} alt={video.snippet.title} />
         <div className="media-body">
